@@ -1,5 +1,6 @@
-# Dasar Pengolahan Citra Digital##
-	* Repository berisi source code Teknik Pengolahan Citra Digital
+# Dasar Pengolahan Citra Digital ##
+
+  Repository ini berisi source code Teknik Pengolahan Citra Digital dengan menggunakan bahasa pemrograman JAVA
 
 ## List Code ##
 
@@ -10,8 +11,8 @@
 
 ## Tools & Library ##
 
-	* Build Tools : Apache Maven
-	* JFreeChart
+1. Build Tools : Apache Maven
+2. JFreeChart
 	
 # Happy Coding :):)
 
