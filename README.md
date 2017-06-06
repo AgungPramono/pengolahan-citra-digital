@@ -1,4 +1,5 @@
-# Dasar Pengolahan Citra ##
+# Dasar Pengolahan Citra Digital##
+	* Repository berisi source code Teknik Pengolahan Citra Digital
 
 ## List Code ##
 
