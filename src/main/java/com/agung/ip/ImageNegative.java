@@ -43,12 +43,15 @@ public class ImageNegative extends javax.swing.JFrame {
     
     private void convertToNegative(String pathFile) throws IOException{
         File input = new File(pathFile);
-        lblImageOri.setIcon(new ImageIcon(ImageIO.read(input)));
         
         image = ImageIO.read(input);
         
         height = image.getHeight();
         width = image.getWidth();
+        
+        lblImageOri.setSize(width, height);
+        lblImgNegative.setSize(width, height);
+        lblImageOri.setIcon(new ImageIcon(ImageIO.read(input)));
         
         for (int i = 0; i < height; i++) { //perulangan untuk mengambil pixel
             for (int j = 0; j < width; j++) { //perulangan untuk mengambil pixel
