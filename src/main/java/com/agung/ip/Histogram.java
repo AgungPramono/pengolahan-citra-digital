@@ -38,6 +38,7 @@ public class Histogram extends javax.swing.JFrame {
 
     public Histogram() {
         initComponents();
+        setMaximumSize(MAXIMIZED_BOTH);
     }
 
     private void loadImage(String pathFile) throws IOException {
@@ -63,7 +64,7 @@ public class Histogram extends javax.swing.JFrame {
     }
 
     private void showHistogram(int[] data, String title) {
-        //pnlChart.setVisible(true);
+        //pnlHistogram.setVisible(true);
         System.out.println("menampilkan grafik");
         DefaultCategoryDataset dataset = new DefaultCategoryDataset();
         for (int i = 0; i < data.length; i++) {
@@ -71,11 +72,11 @@ public class Histogram extends javax.swing.JFrame {
         }
 
         JFreeChart barChart = ChartFactory.createBarChart(
-                title, 
-                "", 
+                title,
+                "",
                 "Nilai",
-                dataset, 
-                PlotOrientation.VERTICAL, 
+                dataset,
+                PlotOrientation.VERTICAL,
                 false, true, false);
 
         CategoryPlot plot = barChart.getCategoryPlot();
@@ -88,7 +89,8 @@ public class Histogram extends javax.swing.JFrame {
 //        frame.setVisible(true);
 //        
         ChartPanel chartPanel = new ChartPanel(barChart);
-        pnlHistogram.add(chartPanel,BorderLayout.CENTER);
+        pnlHistogram.removeAll();
+        pnlHistogram.add(chartPanel, BorderLayout.CENTER);
         pnlHistogram.repaint();
         pnlHistogram.updateUI();
         //pnlHistogram.setVisible(true);
@@ -107,8 +109,8 @@ public class Histogram extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         lblImage = new javax.swing.JLabel();
-        pnlChart = new javax.swing.JPanel();
         pnlHistogram = new javax.swing.JPanel();
+        jPanel3 = new javax.swing.JPanel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
@@ -133,35 +135,24 @@ public class Histogram extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(lblImage, javax.swing.GroupLayout.DEFAULT_SIZE, 340, Short.MAX_VALUE)
+                .addComponent(lblImage, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
-        pnlChart.setBorder(javax.swing.BorderFactory.createTitledBorder("Histogram"));
+        pnlHistogram.setLayout(new java.awt.BorderLayout());
 
-        pnlHistogram.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-
-        javax.swing.GroupLayout pnlHistogramLayout = new javax.swing.GroupLayout(pnlHistogram);
-        pnlHistogram.setLayout(pnlHistogramLayout);
-        pnlHistogramLayout.setHorizontalGroup(
-            pnlHistogramLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 459, Short.MAX_VALUE)
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 545, Short.MAX_VALUE)
         );
-        pnlHistogramLayout.setVerticalGroup(
-            pnlHistogramLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 386, Short.MAX_VALUE)
         );
 
-        javax.swing.GroupLayout pnlChartLayout = new javax.swing.GroupLayout(pnlChart);
-        pnlChart.setLayout(pnlChartLayout);
-        pnlChartLayout.setHorizontalGroup(
-            pnlChartLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pnlHistogram, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        pnlChartLayout.setVerticalGroup(
-            pnlChartLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pnlHistogram, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
+        pnlHistogram.add(jPanel3, java.awt.BorderLayout.CENTER);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -171,18 +162,16 @@ public class Histogram extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(pnlChart, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(pnlHistogram, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addComponent(pnlChart, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(pnlHistogram, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
@@ -284,8 +273,11 @@ public class Histogram extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JLabel lblImage;
-    private javax.swing.JPanel pnlChart;
     private javax.swing.JPanel pnlHistogram;
     // End of variables declaration//GEN-END:variables
+
+    private void setMaximumSize(int MAXIMIZED_BOTH) {
+    }
 }
