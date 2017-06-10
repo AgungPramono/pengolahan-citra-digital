@@ -39,6 +39,7 @@ public class Histogram extends javax.swing.JFrame {
     public Histogram() {
         initComponents();
         setMaximumSize(MAXIMIZED_BOTH);
+        setLocationRelativeTo(null);
     }
 
     private void loadImage(String pathFile) throws IOException {
